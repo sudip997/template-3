@@ -85,6 +85,8 @@
   }
   html {
     @apply font-sans;
+    /* Keeps in-page anchors clear of the sticky 4rem navbar. */
+    scroll-padding-top: 4rem;
   }
   h1,
   h2,
