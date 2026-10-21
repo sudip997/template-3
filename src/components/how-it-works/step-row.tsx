@@ -46,10 +46,7 @@ export function StepRow({ step, windowFirst = false, children }: StepRowProps) {
             {step.description}
           </p>
 
-          <ul
-            role="list"
-            className="mt-8 max-w-md divide-y divide-border border-y border-border"
-          >
+          <ul role="list" className="mt-8 max-w-md">
             {step.points.map((point) => (
               <li
                 key={point}
