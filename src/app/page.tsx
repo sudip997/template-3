@@ -2,6 +2,7 @@ import { Container } from "@/components/layout/container";
 import { Hero } from "@/components/hero/hero";
 import { HowItWorks } from "@/components/how-it-works/how-it-works";
 import { LogoCloud } from "@/components/logo-cloud/logo-cloud";
+import { Metrics } from "@/components/metrics/metrics";
 import { Navbar } from "@/components/navbar/navbar";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <LogoCloud />
         <HowItWorks />
+        <Metrics />
       </main>
     </Container>
   );
