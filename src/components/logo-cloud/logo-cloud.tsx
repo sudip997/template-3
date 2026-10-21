@@ -19,10 +19,10 @@ export function LogoCloud({
       className="relative border-b border-border"
     >
       {/* Plain background on purpose: the rails and grid lines do the framing. */}
-      <div className="px-6 py-10 text-center md:px-12 md:py-12">
+      <div className="px-6 pb-6 pt-18 text-center md:px-12 md:pb-8 md:pt-24">
         <p
           id="logo-cloud-label"
-          className="mx-auto max-w-[48ch] font-mono text-xs tracking-wide text-balance text-muted-foreground"
+          className="mx-auto font-heading max-w-sm tracking-wide text-balance text-muted-foreground"
         >
           {label}
         </p>
