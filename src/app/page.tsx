@@ -1,3 +1,4 @@
+import { Bento } from "@/components/bento/bento";
 import { Container } from "@/components/layout/container";
 import { Hero } from "@/components/hero/hero";
 import { HowItWorks } from "@/components/how-it-works/how-it-works";
@@ -12,6 +13,7 @@ export default function Home() {
       <main id="main">
         <Hero />
         <LogoCloud />
+        <Bento />
         <HowItWorks />
         <Metrics />
       </main>
