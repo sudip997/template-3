@@ -14,6 +14,7 @@ import {
   IconWebhook,
 } from "@tabler/icons-react";
 import { siteConfig } from "@/config/site";
+import { runLogContent, type RunLogContent } from "./run-log-data";
 
 /** Any icon component that accepts a `className` (Tabler or Lucide). */
 type IconComponent = ComponentType<{ className?: string }>;
@@ -71,7 +72,10 @@ export type BentoContent = {
   eyebrow: string;
   headline: { lead: string; highlight: string };
   description: string;
+  /** Row 1: the full-width event pipeline panel. */
   pipeline: PipelineContent;
+  /** Row 2, left: the live run log. */
+  runLog: RunLogContent;
 };
 
 /* -------------------------------------------------------------------------
@@ -181,4 +185,5 @@ export const bentoContent: BentoContent = {
       },
     ],
   },
+  runLog: runLogContent,
 };
