@@ -2,13 +2,14 @@ import { Crosshair } from "@/components/layout/crosshair";
 import { bentoContent, type BentoContent } from "./bento-data";
 import { BentoReveal } from "./bento-reveal";
 import { PipelinePanel } from "./pipeline-panel";
+import { RunLogPanel } from "./run-log-panel";
 
 // The frame rails sit at the viewport edge below this width, so the
 // crosshair marks would overflow the page. Only show them on wide screens.
 const crosshair = "hidden xl:block";
 
 export function Bento({ content = bentoContent }: { content?: BentoContent }) {
-  const { eyebrow, headline, description, pipeline } = content;
+  const { eyebrow, headline, description, pipeline, runLog } = content;
 
   return (
     <section
@@ -46,6 +47,18 @@ export function Bento({ content = bentoContent }: { content?: BentoContent }) {
 
         <BentoReveal delay={0.1}>
           <PipelinePanel content={pipeline} />
+        </BentoReveal>
+      </div>
+
+      {/* Row 2: two panels side by side from `md`. The run log is the left
+          one; the divider between the two is its right border. */}
+      <div className="relative grid border-t border-border md:grid-cols-2">
+        <Crosshair className={`top-[-5px] left-[-6px] ${crosshair}`} />
+        <Crosshair className={`top-[-5px] right-[-6px] ${crosshair}`} />
+        <Crosshair className="top-[-5px] left-1/2 hidden -translate-x-1/2 md:block" />
+
+        <BentoReveal delay={0.1} className="h-full md:border-r md:border-border">
+          <RunLogPanel content={runLog} />
         </BentoReveal>
       </div>
 
