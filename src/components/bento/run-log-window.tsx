@@ -79,6 +79,13 @@ export function RunLogWindow({ content }: { content: RunLogContent }) {
   // What the status pill says. Hovering the feed holds it still, so the pill
   // says so too (off screen nobody can see it, so that case does not matter).
   const following = playing && !hovered;
+  // Visitors who prefer reduced motion get a still log, which is a snapshot,
+  // not something they paused.
+  const statusLabel = reduceMotion
+    ? labels.snapshot
+    : following
+      ? labels.following
+      : labels.paused;
 
   // One timer per line: wait, add the next line, and the new `feed.next`
   // starts the following wait.
@@ -131,7 +138,7 @@ export function RunLogWindow({ content }: { content: RunLogContent }) {
                   )}
                 />
               </span>
-              {following ? labels.following : labels.paused}
+              {statusLabel}
             </span>
 
             {/* Nothing is moving for reduced-motion visitors, so no control.

@@ -42,6 +42,8 @@ export type RunLogContent = {
     failed: string;
     following: string;
     paused: string;
+    /** Shown instead of "Following" when the feed is still (reduced motion). */
+    snapshot: string;
     pause: string;
     resume: string;
   };
@@ -73,6 +75,7 @@ export const runLogContent: RunLogContent = {
     failed: "Failed",
     following: "Following",
     paused: "Paused",
+    snapshot: "Snapshot",
     pause: "Pause",
     resume: "Resume",
   },
