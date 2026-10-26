@@ -1,6 +1,7 @@
 import { Crosshair } from "@/components/layout/crosshair";
 import { bentoContent, type BentoContent } from "./bento-data";
 import { BentoReveal } from "./bento-reveal";
+import { GlobePanel } from "./globe-panel";
 import { PipelinePanel } from "./pipeline-panel";
 import { RunLogPanel } from "./run-log-panel";
 
@@ -9,7 +10,7 @@ import { RunLogPanel } from "./run-log-panel";
 const crosshair = "hidden xl:block";
 
 export function Bento({ content = bentoContent }: { content?: BentoContent }) {
-  const { eyebrow, headline, description, pipeline, runLog } = content;
+  const { eyebrow, headline, description, pipeline, runLog, globe } = content;
 
   return (
     <section
@@ -51,7 +52,8 @@ export function Bento({ content = bentoContent }: { content?: BentoContent }) {
       </div>
 
       {/* Row 2: two panels side by side from `md`. The run log is the left
-          one; the divider between the two is its right border. */}
+          one and the globe the right; the divider between the two is the
+          run log's right border. Stacked, a hairline separates them. */}
       <div className="relative grid border-t border-border md:grid-cols-2">
         <Crosshair className={`top-[-5px] left-[-6px] ${crosshair}`} />
         <Crosshair className={`top-[-5px] right-[-6px] ${crosshair}`} />
@@ -59,6 +61,13 @@ export function Bento({ content = bentoContent }: { content?: BentoContent }) {
 
         <BentoReveal delay={0.1} className="h-full md:border-r md:border-border">
           <RunLogPanel content={runLog} />
+        </BentoReveal>
+
+        <BentoReveal
+          delay={0.2}
+          className="h-full border-t border-border md:border-t-0"
+        >
+          <GlobePanel content={globe} />
         </BentoReveal>
       </div>
 
