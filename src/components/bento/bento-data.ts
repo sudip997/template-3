@@ -14,6 +14,7 @@ import {
   IconWebhook,
 } from "@tabler/icons-react";
 import { siteConfig } from "@/config/site";
+import { globeContent, type GlobeContent } from "./globe-data";
 import { runLogContent, type RunLogContent } from "./run-log-data";
 
 /** Any icon component that accepts a `className` (Tabler or Lucide). */
@@ -76,6 +77,8 @@ export type BentoContent = {
   pipeline: PipelineContent;
   /** Row 2, left: the live run log. */
   runLog: RunLogContent;
+  /** Row 2, right: the globe with routes between regions. */
+  globe: GlobeContent;
 };
 
 /* -------------------------------------------------------------------------
@@ -186,4 +189,5 @@ export const bentoContent: BentoContent = {
     ],
   },
   runLog: runLogContent,
+  globe: globeContent,
 };
