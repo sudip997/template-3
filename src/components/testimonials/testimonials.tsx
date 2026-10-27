@@ -53,8 +53,8 @@ export function Testimonials({
 
       {/* Featured quote and customer selector */}
       <div className="relative border-t border-border">
-        <Crosshair className={`top-[-5px] left-[-6px] ${crosshair}`} />
-        <Crosshair className={`top-[-5px] right-[-6px] ${crosshair}`} />
+        {/* <Crosshair className={`top-[-5px] left-[-6px] ${crosshair}`} />
+        <Crosshair className={`top-[-5px] right-[-6px] ${crosshair}`} /> */}
 
         <TestimonialsReveal delay={0.1}>
           <FeaturedQuotes items={featured} />
