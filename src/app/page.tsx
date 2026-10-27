@@ -5,6 +5,7 @@ import { HowItWorks } from "@/components/how-it-works/how-it-works";
 import { LogoCloud } from "@/components/logo-cloud/logo-cloud";
 import { Metrics } from "@/components/metrics/metrics";
 import { Navbar } from "@/components/navbar/navbar";
+import { Testimonials } from "@/components/testimonials/testimonials";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Bento />
         <HowItWorks />
         <Metrics />
+        <Testimonials />
       </main>
     </Container>
   );
